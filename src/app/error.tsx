@@ -1,0 +1,5 @@
+"use client";
+import { useEffect } from "react";
+import Link from "next/link";
+import { CircleAlert } from "lucide-react";
+export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) { useEffect(() => {}, []); return <main className="grid min-h-screen place-items-center bg-slate-50 p-6 dark:bg-[#0b1220]"><section className="max-w-md text-center"><span className="mx-auto grid size-14 place-items-center rounded-2xl bg-rose-50 text-rose-600 dark:bg-rose-500/15"><CircleAlert size={26} /></span><p className="mt-6 text-xs font-extrabold uppercase tracking-[.15em] text-rose-600">Something went wrong</p><h1 className="mt-2 text-2xl font-extrabold text-slate-900 dark:text-white">We couldn&apos;t complete that request.</h1><p className="mt-3 text-sm leading-6 text-slate-500">Your data is safe. Please try again, or return to the MediCore overview.</p><div className="mt-6 flex justify-center gap-2"><button onClick={reset} className="button-primary">Try again</button><Link href="/dashboard" className="button-secondary">Overview</Link></div></section></main>; }
